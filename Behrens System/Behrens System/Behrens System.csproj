@@ -92,7 +92,28 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\ToDoService\Behrens_System.ToDoService.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ToDoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ToDoService\configuration.svcinfo" />
+    <None Include="Service References\ToDoService\configuration91.svcinfo" />
+    <None Include="Service References\ToDoService\Service1.disco" />
     <None Include="project.json" />
+    <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
+    <None Include="Service References\ToDoService\Service1.wsdl" />
+    <None Include="Service References\ToDoService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ToDoService\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ToDoService\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -102,6 +123,12 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ToDoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -112,6 +139,19 @@
   <ItemGroup>
     <Content Include="Assets\BadgeLogo.scale-100.png" />
     <Content Include="Assets\BadgeLogo.scale-200.png" />
+    <Content Include="Assets\CompanyLogos\Behrens Corporate &amp; Workwear Logo Landscape %28CMYK%29 copy 2.png" />
+    <Content Include="Assets\CompanyLogos\Behrens Corporate &amp; Workwear Logo Portrait %28CMYK%29 copy 2.png" />
+    <Content Include="Assets\CompanyLogos\Behrens Fabrics Logo Landscape %28CMYK%29 copy.png" />
+    <Content Include="Assets\CompanyLogos\Behrens Fabrics Logo Portrait %28CMYK%29 copy.png" />
+    <Content Include="Assets\CompanyLogos\Behrens Group Logo Landscape Strapline %28CMYK%29.png" />
+    <Content Include="Assets\CompanyLogos\Behrens Group Logo Portrait Strapline %28CMYK%29.png" />
+    <Content Include="Assets\CompanyLogos\Behrens Healthcare Logo Landscape %28RGB%29 White.png" />
+    <Content Include="Assets\CompanyLogos\Behrens Healthcare Logo Landscape %28RGB%29.png" />
+    <Content Include="Assets\CompanyLogos\Behrens Sportswear Logo Landscape %28CMYK%29.png" />
+    <Content Include="Assets\CompanyLogos\Behrens Sportswear Logo Portrait %28CMYK%29.png" />
+    <Content Include="Assets\CompanyLogos\CompanyLogo.png" />
+    <Content Include="Assets\CompanyLogos\CompanyLogoLandscape.png" />
+    <Content Include="Assets\CompanyLogos\HealthcareTextLogo.png" />
     <Content Include="Assets\SplashScreen.scale-150.png" />
     <Content Include="Assets\SplashScreen.scale-400.png" />
     <Content Include="Assets\Square150x150Logo.scale-400.png" />
@@ -139,6 +179,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ToDoService\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

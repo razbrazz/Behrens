@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Xml.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -25,6 +26,30 @@ namespace Behrens_System
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private async void GetButton_Click(object sender, RoutedEventArgs e)
+        {
+            ToDoService.Service1Client service1Client = new ToDoService.Service1Client();
+            ToDoService.querySqlRequest request = new ToDoService.querySqlRequest();
+            ToDoService.querySqlResponse ds = await service1Client.querySqlAsync(request);
+
+            if (ds.queryParam)
+            {
+                XDocument xdoc = XDocument.Parse(ds.querySqlRequest.Nodes[1].ToString(), LoadOptions.None);
+                var data = from query in xdoc.Descendants("Table")
+                           select new Users
+                           {
+                               Username = query.Element("username").Value,
+                               Password = query.Element("password").Value
+                           };
+                lvDataTemplates.ItemsSource = data;
+            }
+            else
+            {
+
+            }
+
         }
     }
 }
