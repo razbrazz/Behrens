@@ -7,6 +7,11 @@
 
     <Application.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourceDictionarys/SideBarDictionary.xaml"/>
+                <ResourceDictionary Source="ResourceDictionarys/MenuDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
             <x:String x:Key="AppLogo">Windows Store Code Samples by All-In-One Code Framework</x:String>
             <x:String x:Key="AppName">Access SQL Server database in Windows Store apps</x:String>
             <x:String x:Key="AppDescription">

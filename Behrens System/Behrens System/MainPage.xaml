@@ -7,167 +7,91 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <Grid x:Name="ContentRoot" Margin="100,20,100,20">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
 
-            <!-- page title -->
-            <Grid x:Name="TitleGrid">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="{StaticResource AppLogo}" Style="{StaticResource AppLogoStyle}"/>
-                <TextBlock Grid.Row="1" Name="AppName" Text="{StaticResource AppName}" Style="{StaticResource AppHeaderStyle}"/>
-                <TextBlock Grid.Row="2" Text="{StaticResource AppDescription}" Style="{StaticResource AppDescriptionStyle}" />
-            </Grid>
-
-
-            <!-- page body -->
-            <Grid Grid.Row="1">
-                <Grid.Resources>
-                    <ResourceDictionary>
-                        <ResourceDictionary.ThemeDictionaries>
-                            <ResourceDictionary x:Key="Default">
-                                <SolidColorBrush x:Key="StatusBrush">Red</SolidColorBrush>
-                            </ResourceDictionary>
-                            <ResourceDictionary x:Key="HighContrast">
-                                <SolidColorBrush x:Key="StatusBrush">White</SolidColorBrush>
-                            </ResourceDictionary>
-                        </ResourceDictionary.ThemeDictionaries>
-                    </ResourceDictionary>
-                </Grid.Resources>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid x:Name="Input" Grid.Row="0">
-                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <Button  Content="GetData" x:Name="GetButton" Margin="0,0,10,0" Click="GetButton_Click"/>
-                    </StackPanel>
-                </Grid>
-
-                <Grid x:Name="Output"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" >
-                    <ListView x:Name="lvDataTemplates" >
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock Style="{StaticResource BasicTitleStyle}" > 
-                                    <Run Text="Title: "/> 
-                                    <Run Text="{Binding Title}" />
-                                    </TextBlock>
-                                    <TextBlock Style="{StaticResource BasicTextStyle}"> 
-                                    <Run Text="Text: "/> 
-                                    <Run Text="{Binding Text}"/>
-                                    </TextBlock>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </Grid>
-            </Grid>
-
-            <!-- Error/Status -->
-            <Grid Grid.Row="2">
-                <Grid.Resources>
-                    <ResourceDictionary>
-                        <ResourceDictionary.ThemeDictionaries>
-                            <ResourceDictionary x:Key="Default">
-                                <SolidColorBrush x:Key="StatusBrush">Red</SolidColorBrush>
-                            </ResourceDictionary>
-                            <ResourceDictionary x:Key="HighContrast">
-                                <SolidColorBrush x:Key="StatusBrush">White</SolidColorBrush>
-                            </ResourceDictionary>
-                        </ResourceDictionary.ThemeDictionaries>
-                    </ResourceDictionary>
-                </Grid.Resources>
-                <TextBlock x:Name="StatusBlock" TextWrapping="Wrap" Foreground="{StaticResource StatusBrush}" />
-            </Grid>
-
-            <!-- Footer -->
-            <Grid Grid.Row="3">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="27*"/>
-                    <ColumnDefinition Width="556*"/>
-                </Grid.ColumnDefinitions>
-                <Grid x:Name="Footer" Margin="0,0,0,10" VerticalAlignment="Bottom" Grid.ColumnSpan="2" >
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Row="0"  Source="Assets/microsoft.png" AutomationProperties.Name="Microsoft Logo" Stretch="None" HorizontalAlignment="Left"/>
-                    <TextBlock Style="{StaticResource AppFooterStyle}" Text="© 2013 Microsoft Corporation. All rights reserved." TextWrapping="Wrap" Grid.Row="1" HorizontalAlignment="Left"/>
-                    <StackPanel x:Name="FooterPanel" Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right">
-                        <HyperlinkButton Content="All-In-One Code Framework" Tag="http://blogs.msdn.com/b/onecode" Click="FooterClick" FontSize="12"/>
-                    </StackPanel>
-                </Grid>
-            </Grid>
+        <RelativePanel Background="White"
+                   Grid.Row="1" Grid.Column="1"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Image Name="CompanyLogo" Source="ms-appx:///Assets/CompanyLogos/Behrens Group Logo Portrait Strapline (CMYK).png"
+               Height="400"
+               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <StackPanel Name="LoginBoxes"
+                    RelativePanel.RightOf="CompanyLogo" RelativePanel.AlignBottomWith="CompanyLogo"
+                    Margin="100,0,0,0" Width="350"
+                    VerticalAlignment="Center"
+                    BorderBrush="Black" BorderThickness="0">
+                <TextBox Name="txtUsername" Text="" PlaceholderText="Username"
+                     InputScope="AlphanumericFullWidth"
+                     Height="60" Margin="0,10,0,0"
+                     FontWeight="Light" FontSize="30" 
+                     VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                    <TextBox.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.98">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TextBox.BorderBrush>
+                </TextBox>
+                <PasswordBox  Name="pwdPassword" Password="" PlaceholderText="Password" 
+                              Background="White" 
+                              Height="60" Margin="0,10,0,0"
+                              HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                              FontSize="30" FontWeight="Light" 
+                              PasswordRevealMode="Peek">
+                    <PasswordBox.InputScope>
+                        <InputScope>
+                            <InputScope.Names>
+                                <InputScopeName NameValue="Password"/>
+                            </InputScope.Names>
+                        </InputScope>
+                    </PasswordBox.InputScope>
+                    <PasswordBox.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.98">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                        </LinearGradientBrush>
+                    </PasswordBox.BorderBrush>
+                </PasswordBox>
+                <Button Name="btnLogin" Content="Log In" Click="btnLogin_Click" 
+                    Background="#FF009FB7" Foreground="White" 
+                    Height="60" Margin="0,20,0,0" 
+                    HorizontalAlignment="Stretch"
+                    BorderThickness="1"
+                    FontWeight="Light" FontSize="30">
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.95">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                </Button>
+            </StackPanel>
+        </RelativePanel>
+        <Grid Grid.Row="2" Grid.Column="1" 
+              Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="ms-appx:///Assets/HealthcareTextLogo.png" Grid.Column="0" Margin="5"/>
+            <Image Source="ms-appx:///Assets/HealthcareTextLogo.png" Grid.Column="1" Margin="5"/>
+            <Image Source="ms-appx:///Assets/HealthcareTextLogo.png" Grid.Column="2" Margin="5"/>
+            <Image Source="ms-appx:///Assets/HealthcareTextLogo.png" Grid.Column="3" Margin="5"/>
+            <Image Source="ms-appx:///Assets/HealthcareTextLogo.png" Grid.Column="4" Margin="5"/>
         </Grid>
-
-        <VisualStateManager.VisualStateGroups>
-
-            <!-- Visual states reflect the application's view state -->
-            <VisualStateGroup x:Name="ApplicationViewStates">
-                <VisualState x:Name="FullScreenLandscape"/>
-                <VisualState x:Name="Filled"/>
-
-                <!-- The entire page respects the narrower 100-pixel margin convention for portrait -->
-                <VisualState x:Name="FullScreenPortrait">
-                    <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="ContentRoot">
-                            <DiscreteObjectKeyFrame KeyTime="0">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <Thickness>20,20,20,20</Thickness>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                    </Storyboard>
-                </VisualState>
-
-                <!-- The back button and title have different styles when snapped -->
-                <VisualState x:Name="Snapped">
-                    <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TitleGrid" Storyboard.TargetProperty="Visibility">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="ContentRoot">
-                            <DiscreteObjectKeyFrame KeyTime="0">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <Thickness>20,20,20,20</Thickness>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="FooterPanel">
-                            <DiscreteObjectKeyFrame KeyTime="0">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <HorizontalAlignment>Left</HorizontalAlignment>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Row)" Storyboard.TargetName="FooterPanel">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="2"/>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="FooterPanel">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
-                        </ObjectAnimationUsingKeyFrames>
-                    </Storyboard>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
     </Grid>
 
 </Page>

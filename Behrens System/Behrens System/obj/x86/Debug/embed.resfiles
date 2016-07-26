@@ -1,2 +1,10 @@
 App.xbf
+MainMenuPages\MainMenuPage.xbf
+MainMenuPages\MainMenuSideBar.xbf
 MainPage.xbf
+ResourceDictionarys\MenuDictionary.xbf
+ResourceDictionarys\SideBarDictionary.xbf
+View\Projects\Projects.xbf
+View\PurchaseOrders\PurchaseOrderMenu.xbf
+View\Quotes\QuotesMenu.xbf
+View\SalesOrders\SalesOrderMenu.xbf

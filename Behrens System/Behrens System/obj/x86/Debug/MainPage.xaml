@@ -1,0 +1,98 @@
+﻿<Page
+    x:Class="Behrens_System.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Behrens_System"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+
+        <RelativePanel Background="White"
+                   Grid.Row="1" Grid.Column="1"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Image x:ConnectionId='1' Name="CompanyLogo" Source="ms-appx:///Assets/CompanyLogos/Behrens Group Logo Portrait Strapline (CMYK).png"
+               Height="400"
+               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <StackPanel x:ConnectionId='2' Name="LoginBoxes"
+                    RelativePanel.RightOf="CompanyLogo" RelativePanel.AlignBottomWith="CompanyLogo"
+                    Margin="100,0,0,0" Width="350"
+                    VerticalAlignment="Center"
+                    BorderBrush="Black" BorderThickness="0">
+                <TextBox x:ConnectionId='3' Name="txtUsername" Text="" PlaceholderText="Username"
+                     InputScope="AlphanumericFullWidth"
+                     Height="60" Margin="0,10,0,0"
+                     FontWeight="Light" FontSize="30" 
+                     VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                    <TextBox.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.98">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TextBox.BorderBrush>
+                </TextBox>
+                <PasswordBox x:ConnectionId='4'  Name="pwdPassword" Password="" PlaceholderText="Password" 
+                              Background="White" 
+                              Height="60" Margin="0,10,0,0"
+                              HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                              FontSize="30" FontWeight="Light" 
+                              PasswordRevealMode="Peek">
+                    <PasswordBox.InputScope>
+                        <InputScope>
+                            <InputScope.Names>
+                                <InputScopeName NameValue="Password"/>
+                            </InputScope.Names>
+                        </InputScope>
+                    </PasswordBox.InputScope>
+                    <PasswordBox.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.98">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                        </LinearGradientBrush>
+                    </PasswordBox.BorderBrush>
+                </PasswordBox>
+                <Button x:ConnectionId='5' Name="btnLogin" Content="Log In"                        
+                    Background="#FF009FB7" Foreground="White" 
+                    Height="60" Margin="0,20,0,0" 
+                    HorizontalAlignment="Stretch"
+                    BorderThickness="1"
+                    FontWeight="Light" FontSize="30">
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.95">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                </Button>
+            </StackPanel>
+        </RelativePanel>
+        <Grid Grid.Row="2" Grid.Column="1" 
+              Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="ms-appx:///Assets/HealthcareTextLogo.png" Grid.Column="0" Margin="5"/>
+            <Image Source="ms-appx:///Assets/HealthcareTextLogo.png" Grid.Column="1" Margin="5"/>
+            <Image Source="ms-appx:///Assets/HealthcareTextLogo.png" Grid.Column="2" Margin="5"/>
+            <Image Source="ms-appx:///Assets/HealthcareTextLogo.png" Grid.Column="3" Margin="5"/>
+            <Image Source="ms-appx:///Assets/HealthcareTextLogo.png" Grid.Column="4" Margin="5"/>
+        </Grid>
+    </Grid>
+
+</Page>
+
