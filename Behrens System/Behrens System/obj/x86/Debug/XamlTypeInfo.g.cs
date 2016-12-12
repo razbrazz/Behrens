@@ -132,7 +132,7 @@ namespace Behrens_System.Behrens_System_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[9];
+            _typeNameTable = new string[17];
             _typeNameTable[0] = "Behrens_System.MainMenuPages.MainMenuPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -140,10 +140,18 @@ namespace Behrens_System.Behrens_System_XamlTypeInfo
             _typeNameTable[4] = "Behrens_System.MainPage";
             _typeNameTable[5] = "Behrens_System.View.Projects.Projects";
             _typeNameTable[6] = "Behrens_System.View.PurchaseOrders.PurchaseOrderMenu";
-            _typeNameTable[7] = "Behrens_System.View.QuotesMenu";
-            _typeNameTable[8] = "Behrens_System.View.SalesOrders.SalesOrderMenu";
+            _typeNameTable[7] = "Behrens_System.View.Quotes.Quote_Items.AddProduct";
+            _typeNameTable[8] = "Behrens_System.View.Quotes.Quote_Items.BHQCdetm";
+            _typeNameTable[9] = "Behrens_System.View.Quotes.Quote_Items.BHQRBdetm";
+            _typeNameTable[10] = "Behrens_System.View.Quotes.Quote_Items.BHQVBdetm";
+            _typeNameTable[11] = "Behrens_System.View.Quotes.Quote_Items.CustomerInformation";
+            _typeNameTable[12] = "Behrens_System.View.Quotes.Quote_Items.QuoteHeader";
+            _typeNameTable[13] = "Behrens_System.View.Quotes.Quote_Items.QuoteHeaderFrame";
+            _typeNameTable[14] = "Behrens_System.View.Quotes.QuoteInformation";
+            _typeNameTable[15] = "Behrens_System.View.QuotesMenu";
+            _typeNameTable[16] = "Behrens_System.View.SalesOrders.Sales_Order_Items.SalesOrderHeader";
 
-            _typeTable = new global::System.Type[9];
+            _typeTable = new global::System.Type[17];
             _typeTable[0] = typeof(global::Behrens_System.MainMenuPages.MainMenuPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -151,8 +159,16 @@ namespace Behrens_System.Behrens_System_XamlTypeInfo
             _typeTable[4] = typeof(global::Behrens_System.MainPage);
             _typeTable[5] = typeof(global::Behrens_System.View.Projects.Projects);
             _typeTable[6] = typeof(global::Behrens_System.View.PurchaseOrders.PurchaseOrderMenu);
-            _typeTable[7] = typeof(global::Behrens_System.View.QuotesMenu);
-            _typeTable[8] = typeof(global::Behrens_System.View.SalesOrders.SalesOrderMenu);
+            _typeTable[7] = typeof(global::Behrens_System.View.Quotes.Quote_Items.AddProduct);
+            _typeTable[8] = typeof(global::Behrens_System.View.Quotes.Quote_Items.BHQCdetm);
+            _typeTable[9] = typeof(global::Behrens_System.View.Quotes.Quote_Items.BHQRBdetm);
+            _typeTable[10] = typeof(global::Behrens_System.View.Quotes.Quote_Items.BHQVBdetm);
+            _typeTable[11] = typeof(global::Behrens_System.View.Quotes.Quote_Items.CustomerInformation);
+            _typeTable[12] = typeof(global::Behrens_System.View.Quotes.Quote_Items.QuoteHeader);
+            _typeTable[13] = typeof(global::Behrens_System.View.Quotes.Quote_Items.QuoteHeaderFrame);
+            _typeTable[14] = typeof(global::Behrens_System.View.Quotes.QuoteInformation);
+            _typeTable[15] = typeof(global::Behrens_System.View.QuotesMenu);
+            _typeTable[16] = typeof(global::Behrens_System.View.SalesOrders.Sales_Order_Items.SalesOrderHeader);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -192,8 +208,16 @@ namespace Behrens_System.Behrens_System_XamlTypeInfo
         private object Activate_4_MainPage() { return new global::Behrens_System.MainPage(); }
         private object Activate_5_Projects() { return new global::Behrens_System.View.Projects.Projects(); }
         private object Activate_6_PurchaseOrderMenu() { return new global::Behrens_System.View.PurchaseOrders.PurchaseOrderMenu(); }
-        private object Activate_7_QuotesMenu() { return new global::Behrens_System.View.QuotesMenu(); }
-        private object Activate_8_SalesOrderMenu() { return new global::Behrens_System.View.SalesOrders.SalesOrderMenu(); }
+        private object Activate_7_AddProduct() { return new global::Behrens_System.View.Quotes.Quote_Items.AddProduct(); }
+        private object Activate_8_BHQCdetm() { return new global::Behrens_System.View.Quotes.Quote_Items.BHQCdetm(); }
+        private object Activate_9_BHQRBdetm() { return new global::Behrens_System.View.Quotes.Quote_Items.BHQRBdetm(); }
+        private object Activate_10_BHQVBdetm() { return new global::Behrens_System.View.Quotes.Quote_Items.BHQVBdetm(); }
+        private object Activate_11_CustomerInformation() { return new global::Behrens_System.View.Quotes.Quote_Items.CustomerInformation(); }
+        private object Activate_12_QuoteHeader() { return new global::Behrens_System.View.Quotes.Quote_Items.QuoteHeader(); }
+        private object Activate_13_QuoteHeaderFrame() { return new global::Behrens_System.View.Quotes.Quote_Items.QuoteHeaderFrame(); }
+        private object Activate_14_QuoteInformation() { return new global::Behrens_System.View.Quotes.QuoteInformation(); }
+        private object Activate_15_QuotesMenu() { return new global::Behrens_System.View.QuotesMenu(); }
+        private object Activate_16_SalesOrderHeader() { return new global::Behrens_System.View.SalesOrders.Sales_Order_Items.SalesOrderHeader(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -248,16 +272,72 @@ namespace Behrens_System.Behrens_System_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 7:   //  Behrens_System.View.QuotesMenu
+            case 7:   //  Behrens_System.View.Quotes.Quote_Items.AddProduct
                 userType = new global::Behrens_System.Behrens_System_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_QuotesMenu;
+                userType.Activator = Activate_7_AddProduct;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  Behrens_System.View.SalesOrders.SalesOrderMenu
+            case 8:   //  Behrens_System.View.Quotes.Quote_Items.BHQCdetm
                 userType = new global::Behrens_System.Behrens_System_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_SalesOrderMenu;
+                userType.Activator = Activate_8_BHQCdetm;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 9:   //  Behrens_System.View.Quotes.Quote_Items.BHQRBdetm
+                userType = new global::Behrens_System.Behrens_System_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_9_BHQRBdetm;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 10:   //  Behrens_System.View.Quotes.Quote_Items.BHQVBdetm
+                userType = new global::Behrens_System.Behrens_System_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_10_BHQVBdetm;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 11:   //  Behrens_System.View.Quotes.Quote_Items.CustomerInformation
+                userType = new global::Behrens_System.Behrens_System_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_11_CustomerInformation;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 12:   //  Behrens_System.View.Quotes.Quote_Items.QuoteHeader
+                userType = new global::Behrens_System.Behrens_System_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_12_QuoteHeader;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 13:   //  Behrens_System.View.Quotes.Quote_Items.QuoteHeaderFrame
+                userType = new global::Behrens_System.Behrens_System_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_13_QuoteHeaderFrame;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 14:   //  Behrens_System.View.Quotes.QuoteInformation
+                userType = new global::Behrens_System.Behrens_System_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_14_QuoteInformation;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 15:   //  Behrens_System.View.QuotesMenu
+                userType = new global::Behrens_System.Behrens_System_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_15_QuotesMenu;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 16:   //  Behrens_System.View.SalesOrders.Sales_Order_Items.SalesOrderHeader
+                userType = new global::Behrens_System.Behrens_System_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_16_SalesOrderHeader;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

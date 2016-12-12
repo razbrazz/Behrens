@@ -54,7 +54,7 @@ namespace Behrens_System
 
         private void btnSalesOrders_Click(object sender, RoutedEventArgs e)
         {
-            MainMenuFrame.Navigate(typeof(View.SalesOrders.SalesOrderMenu));
+            //MainMenuFrame.Navigate(typeof(View.SalesOrders.SalesOrderMenu));
         }
 
         private void btnProjects_Click(object sender, RoutedEventArgs e)

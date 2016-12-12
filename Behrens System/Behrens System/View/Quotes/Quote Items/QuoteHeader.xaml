@@ -1,0 +1,212 @@
+﻿<Page
+    x:Class="Behrens_System.View.Quotes.Quote_Items.QuoteHeader"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Behrens_System.View.Quotes.Quote_Items"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <SolidColorBrush x:Key="LightGreenColour" Color="LightGreen"/>
+        <SolidColorBrush x:Key="WhiteColour" Color="White"/>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.55*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="0.25*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1.25*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.125*"/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Left" 
+                    VerticalAlignment="Bottom"
+                    Grid.Column="1"
+                    Orientation="Horizontal">
+            <Button Name="btnAddItem" 
+                    Content="Add Product"
+                    Height="50"
+                    Width="120" 
+                    Margin="0,0,0,0"
+                    Background="SkyBlue" Click="btnAddItem_Click"/>
+            <Button Name="btnGetCostings" 
+                    Content="Get Cost/Price"
+                    Height="50"
+                    Width="120" 
+                    Margin="10,0,0,0"
+                    Background="SkyBlue"/>
+            <Button Name="btnSaveQuote" 
+                    Content="Save Quote"
+                    Margin="10,0,0,0"
+                    Height="50"
+                    Width="120"
+                    Background="SkyBlue"/>
+            <Button Name="btnExitQuote" 
+                    Content="Exit Quote"
+                    Height="50"
+                    Width="120" 
+                    Margin="10,0,0,0"
+                    Background="Tomato"/>
+        </StackPanel>
+        <HyperlinkButton Content="Quote Header" 
+                         Grid.Row="1" 
+                         Grid.Column="1" 
+                         Style="{StaticResource txtHLHeaderText}"/>
+        <StackPanel Grid.Row="2" Grid.Column="1"/>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Quote Number:" 
+                       Style="{StaticResource txtItemText}"/>
+            <TextBlock Text="Quote Subject:"
+                       Style="{StaticResource txtItemText}"
+                       Grid.Row="1"
+                       Grid.Column="0"/>
+            <TextBlock Text="Quote Status"
+                       Style="{StaticResource txtItemText}"
+                       Grid.Row="2"
+                       Grid.Column="0"/>
+            <TextBox Name="tbQuoteNumber"
+                     Style="{StaticResource tbItemText}"
+                     Grid.Column="1" />
+            <TextBox Name="tbQuoteSubject"
+                     Style="{StaticResource tbItemText}"
+                     Grid.Column="1"
+                     Grid.Row="1"/>
+            <TextBox Name="tbQuoteStatus"
+                     Style="{StaticResource tbItemText}"
+                     Grid.Column="1" 
+                     Grid.Row="2"/>
+        </Grid>
+        <Grid Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" 
+              Margin="0,20,0,0" 
+              BorderBrush="Black" 
+              BorderThickness="0.5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="btnCustomerInformation"
+                    Click="btnCustomerInformation_Click"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Grid.Column="0" 
+                    Grid.ColumnSpan="2"
+                    Content="Customer Information"
+                    Background="LightGreen" 
+                    BorderBrush="Black" 
+                    BorderThickness="0.5"/>
+            <Button Name="btnQuoteInformation"
+                    Click="btnQuoteInformation_Click"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    Content="Quote Information"
+                    Background="White"
+                    BorderBrush="Black" 
+                    BorderThickness="0.5"/>
+            <Frame Name="QuoteHeaderBox1" 
+                   Loaded="btnCustomerInformation_Click"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2" 
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Stretch"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.RowSpan ="2" Grid.Column="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Name="btnTracking"  Content="Quote Tracking"
+                    Click="btnTracking_Click"
+                    Style="{StaticResource btnAdditionalInfo}"
+                    Background ="LightGreen"/>
+            <Button Name="btnAmendments"  
+                    Content="Amendments"
+                    Click="btnAmendments_Click"
+                    Style="{StaticResource btnAdditionalInfo}"
+                    Grid.Column="1"/>
+            <Button Name="btnQuoteStatus" Content="Projects"
+                    Click="btnQuoteStatus_Click"
+                    Grid.Column="2"
+                    Style="{StaticResource btnAdditionalInfo}"/>
+            <Button Name="btnQuoteDocs" 
+                    Content="Documents"
+                    Click="btnQuoteDocs_Click"
+                    Grid.Column="3"
+                    Style="{StaticResource btnAdditionalInfo}"/>
+            <Frame Name="BHQAdditionalInfo"
+                   Grid.Row="1" Grid.Column="0" 
+                   Grid.RowSpan="7" Grid.ColumnSpan="3" 
+                   BorderBrush="Black" BorderThickness="0.5"/>
+        </Grid>
+        <StackPanel Grid.Row="4" Grid.Column="3" Name="grdQuoteItems" Margin="0,10,0,0">
+            <HyperlinkButton Content="Quote Items" Style="{StaticResource txtHLHeaderText}"/>
+            <StackPanel Orientation="Horizontal">
+                <HyperlinkButton Content="Product" 
+                                 Style="{StaticResource txtHLMenuText}" 
+                                 FontSize="16"
+                                 VerticalAlignment="Top"
+                                 Width="100"
+                                 Margin="10,0,0,0"/>
+                <HyperlinkButton Content="Quantity" 
+                                 Style="{StaticResource txtHLMenuText}" 
+                                 FontSize="16"
+                                 VerticalAlignment="Top"
+                                 Width="100"
+                                 Margin="10,0,0,0"/>
+                <HyperlinkButton Content="Total Cost" 
+                                 Style="{StaticResource txtHLMenuText}" 
+                                 FontSize="16"
+                                 VerticalAlignment="Top"
+                                 Width="100"
+                                 Margin="10,0,0,0"/>
+                <HyperlinkButton Content="Total Value" 
+                                 Style="{StaticResource txtHLMenuText}" 
+                                 FontSize="16"
+                                 VerticalAlignment="Top"
+                                 Width="100"
+                                 Margin="10,0,0,0"/>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -10,6 +10,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ResourceDictionarys/SideBarDictionary.xaml"/>
                 <ResourceDictionary Source="ResourceDictionarys/MenuDictionary.xaml"/>
+                <ResourceDictionary Source="ResourceDictionarys/HeaderDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <x:String x:Key="AppLogo">Windows Store Code Samples by All-In-One Code Framework</x:String>

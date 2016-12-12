@@ -15,41 +15,16 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Behrens_System.View.SalesOrders
+namespace Behrens_System.View.Quotes
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class SalesOrderMenu : Page
+    public sealed partial class QuoteInformation : Page
     {
-        public SalesOrderMenu()
+        public QuoteInformation()
         {
             this.InitializeComponent();
-        }
-
-        private void btnViewSalesOrder_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnViewAllSalesOrders_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnViewSalesOrdersProgress_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnViewSalesOrdersDespatched_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnViewSalesOrdersInvoiced_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

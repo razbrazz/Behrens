@@ -221,19 +221,14 @@
                   BorderThickness="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="113*"/>
+                    <RowDefinition Height="158*"/>
+                    <RowDefinition Height="347*"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
                 <StackPanel HorizontalAlignment="Stretch" 
-                            Background="#538DD5;" 
-                            Orientation="Horizontal" BorderBrush="Black" BorderThickness="1">
-                    <StackPanel Margin="0,0,0,0" 
-                                Orientation="Horizontal" 
-                                HorizontalAlignment="Left" 
-                                VerticalAlignment="Stretch" 
-                                Background="White">
-                        <Image Source="ms-appx:///Assets/CompanyLogos/CompanyLogoLandscape.png" Height="30" Margin="5,5,5,5"></Image>
-                    </StackPanel>
+                            Background="White" 
+                            Orientation="Horizontal" Margin="0,0,0,111" Grid.RowSpan="2">
                     <TextBlock Margin="20,0,0,0" 
                                FontSize="18" 
                                FontFamily="Segoe UI" 
@@ -242,41 +237,15 @@
                                VerticalAlignment="Center" 
                                Foreground="White"></TextBlock>
                 </StackPanel>
-                <StackPanel Margin="0,5,5,5" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Stretch">
-                    <SearchBox Background="AliceBlue" VerticalAlignment="Center" HorizontalAlignment="Right" Width="300" Height="40" SearchHistoryEnabled="True" PlaceholderText="Search" FontFamily="Segoe UI" FontWeight="Light"/>
+                <StackPanel Margin="0,7,7,3" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Stretch">
+                    <SearchBox Background="AliceBlue" VerticalAlignment="Center" HorizontalAlignment="Right" Width="300" Height="40" 
+                               SearchHistoryEnabled="True" PlaceholderText="Search" FontFamily="Segoe UI" FontWeight="Light" BorderBrush="Black" BorderThickness="0.5"/>
                 </StackPanel>
 
                 <Frame Name="MainMenuFrame" 
-                       Grid.Row="1">
+                       Grid.Row="1" Margin="2,2,2,48" Grid.RowSpan="4">
 
                 </Frame>
-                <Grid Grid.Row="2" 
-                      Background="AliceBlue" 
-                      BorderBrush="#172A33;" 
-                      BorderThickness="0.3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="ms-appx:///Assets/CompanyLogos/HealthcareTextLogo.png" 
-                           Grid.Column="0" 
-                           Margin="5"/>
-                    <Image Source="ms-appx:///Assets/CompanyLogos/HealthcareTextLogo.png" 
-                           Grid.Column="1" 
-                           Margin="5"/>
-                    <Image Source="ms-appx:///Assets/CompanyLogos/HealthcareTextLogo.png" 
-                           Grid.Column="2" 
-                           Margin="5"/>
-                    <Image Source="ms-appx:///Assets/CompanyLogos/HealthcareTextLogo.png" 
-                           Grid.Column="3" 
-                           Margin="5"/>
-                    <Image Source="ms-appx:///Assets/CompanyLogos/HealthcareTextLogo.png" 
-                           Grid.Column="4" 
-                           Margin="5"/>
-                </Grid>
             </Grid>
         </SplitView.Content>
     </SplitView>

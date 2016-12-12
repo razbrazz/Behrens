@@ -9,125 +9,201 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Quotes"
-                   Style="{StaticResource txtMenuHeader}" 
+        <HyperlinkButton Content="Quotes Menu"
+                   Style="{StaticResource txtHLMenuHeader}"
+                   Grid.Row="1"
                    Grid.Column="1" 
-                   Grid.ColumnSpan="2"/>
-        <TextBlock Text="Tasks:"
-                   Style="{StaticResource txtMenuText}"
-                   Grid.Column="1"
-                   Grid.Row="1"/>
-        <StackPanel Grid.Row="1"
-                    Grid.Column="2"
-                    VerticalAlignment="Center" 
-                    Orientation="Horizontal">
-            <Button x:ConnectionId='5' Name="btnNewQuote" 
-                                             
-                    Style="{StaticResource btnMenuButtonMain}"
-                    Margin="20,0,0,0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <TextBlock VerticalAlignment="Center" Grid.Row="0" FontSize="45" HorizontalAlignment="Center" Text="&#xE710;" FontFamily="Segoe MDL2 Assets" Margin="0,0,0,20"/>
-                    <TextBlock VerticalAlignment="Center" Grid.Row="1" TextAlignment="Center">New Quote<LineBreak/>Manual Entry</TextBlock>
-                </Grid>
-            </Button>
-            <Button x:ConnectionId='6' Name="btnNewQuoteDS" 
-                                               
-                    Style="{StaticResource btnMenuButtonMain}"
-                    Margin="20,0,0,0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <TextBlock VerticalAlignment="Center" Grid.Row="0" FontSize="45" HorizontalAlignment="Center" Text="&#xE710;" FontFamily="Segoe MDL2 Assets" Margin="0,0,0,20"/>
-                    <TextBlock VerticalAlignment="Center" Grid.Row="1" TextAlignment="Center">New Quote<LineBreak/>from Datasheet</TextBlock>
-                </Grid>
-            </Button>
-            <Button x:ConnectionId='7' Name="btnViewQuote"
-                                              
-                    Style="{StaticResource btnMenuButtonMain}"
-                    Margin="20,0,0,0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <TextBlock VerticalAlignment="Center" Grid.Row="0" FontSize="40" HorizontalAlignment="Center" Text="&#xE71E;" FontFamily="Segoe MDL2 Assets" Margin="0,0,0,20"/>
-                    <TextBlock VerticalAlignment="Center" Grid.Row="1" TextAlignment="Center">View Quote<LineBreak/></TextBlock>
-                </Grid>
-            </Button>
-        </StackPanel>
-        <TextBlock Style="{StaticResource txtMenuText}"
-                   Grid.Row="2"
-                   Grid.Column="1">
-                   Workflow<LineBreak/>Reports:
-        </TextBlock>
-        <StackPanel Grid.Row="2" 
-                    Grid.Column="2" 
-                    VerticalAlignment="Center" 
-                    Orientation="Horizontal">
-            <Button x:ConnectionId='1' Name="btnViewAllQuotes" 
-                                                  
-                    Margin="20,0,0,0"
-                    Style="{StaticResource btnMenuButtonReports}">
-                <StackPanel VerticalAlignment="Bottom">
-                    <TextBlock FontSize="30" HorizontalAlignment="Center" Text="&#xE8FD;" FontFamily="Segoe MDL2 Assets"></TextBlock>
-                    <TextBlock TextAlignment="Center">View All<LineBreak/>Quotes</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button x:ConnectionId='2' Name="btnViewQuotesProgress"
+                   Grid.ColumnSpan="2"
+                         VerticalAlignment="Top"/>
+        <StackPanel Grid.Column="1" 
+                    Grid.Row="2"
+                    VerticalAlignment="Top">
+            <HyperlinkButton x:ConnectionId='10' Name="btnAddQuote" 
                                                        
-                    Margin="20,0,0,0"
-                    Style="{StaticResource btnMenuButtonReports}">
-                <StackPanel VerticalAlignment="Bottom">
-                    <TextBlock FontSize="30" HorizontalAlignment="Center" Text="&#xE8FD;" FontFamily="Segoe MDL2 Assets"></TextBlock>
-                    <TextBlock TextAlignment="Center">View Quotes<LineBreak/>in Progress</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button x:ConnectionId='3' Name="btnViewQuotesSent"
-                                                   
-                    Margin="20,0,0,0"
-                    Style="{StaticResource btnMenuButtonReports}">
-                <StackPanel VerticalAlignment="Bottom">
-                    <TextBlock FontSize="30" HorizontalAlignment="Center" Text="&#xE8FD;" FontFamily="Segoe MDL2 Assets"></TextBlock>
-                    <TextBlock TextAlignment="Center">View Quotes<LineBreak/>Outstanding</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button x:ConnectionId='4' Name="btnViewQuotesCalledIn"
-                                                       
-                    Margin="20,0,0,0"
-                    Style="{StaticResource btnMenuButtonReports}">
-                <StackPanel VerticalAlignment="Bottom">
-                    <TextBlock FontSize="30" HorizontalAlignment="Center" Text="&#xE8FD;" FontFamily="Segoe MDL2 Assets"></TextBlock>
-                    <TextBlock TextAlignment="Center">View Quotes<LineBreak/>Called In</TextBlock>
-                </StackPanel>
-            </Button>
+                             Content="Add New Quote"
+                             Style="{StaticResource txtHLMenuText}"
+                             Foreground="Black">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Add New Quote"/>
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
+            <HyperlinkButton x:ConnectionId='11' Name="btnAddQuoteDS" 
+                                                         
+                             Content="Add From Datasheet"
+                             Style="{StaticResource txtHLMenuText}"
+                             Foreground="Black">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Add from Datasheet"/>
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
+            <HyperlinkButton x:ConnectionId='12' Name="btnViewQuote" 
+                                                        
+                             Content="View Quote"
+                             Style="{StaticResource txtHLMenuText}"
+                             Foreground="Black">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="View Quote"/>
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
         </StackPanel>
-        <TextBlock Style="{StaticResource txtMenuText}"
-                   Grid.Row="3"
-                   Grid.Column="1">
-                   Analysis<LineBreak/>Reports:
-        </TextBlock>
-        <StackPanel Grid.Row="3" 
-                    HorizontalAlignment="Center" 
-                    VerticalAlignment="Center" 
-                    Orientation="Horizontal">
+        <StackPanel Grid.Row="2"
+                    Grid.Column="3"
+                    VerticalAlignment="Top">
+            <HyperlinkButton x:ConnectionId='8' Name="btnAttachDocument" 
+                                                             
+                             Content="Attach Document"
+                             Style="{StaticResource txtHLMenuText}"
+                             Grid.Column="1"
+                             Grid.Row="1"
+                             Foreground="Black">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Attach Document"/>
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
+            <HyperlinkButton x:ConnectionId='9' Name="btnUpdateStatus" 
+                                                          
+                             Content="Update Status"
+                             Style="{StaticResource txtHLMenuText}"
+                             Grid.Column="1"
+                             Grid.Row="1"
+                             Foreground="Black">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Update Status"/>
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
+        </StackPanel>
+        <StackPanel Grid.Row="2"
+                    Grid.Column="5"
+                    VerticalAlignment="Top">
+            <HyperlinkButton x:ConnectionId='7' Name="btnDeleteQuote"
+                                                         
+                             Content="Delete Quote"
+                             Style="{StaticResource txtHLMenuText}"
+                             Grid.Column="1"
+                             Grid.Row="1"
+                             Foreground="Black">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Delete Quote"/>
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
+        </StackPanel>
+        <StackPanel Grid.Row="3"
+                    Grid.Column="1"
+                    VerticalAlignment="Top">
+            <HyperlinkButton Content="Workflow Reports"
+                             Style="{StaticResource txtHLMenuText}" 
+                             Foreground="Black"/>
+            <HyperlinkButton x:ConnectionId='1' Name="btnViewAllQuotes"
+                                                           
+                             Content="Delete Quote"
+                             Style="{StaticResource txtHLMenuText}"
+                             Grid.Column="1"
+                             Grid.Row="1"
+                             Foreground="Black">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="View All Quotes"/>
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
+            <HyperlinkButton x:ConnectionId='2' Name="btnViewQuotesProgress"
+                                                                
+                             Content="Quotes in Progress"
+                             Style="{StaticResource txtHLMenuText}"
+                             Grid.Column="1"
+                             Grid.Row="1"
+                             Foreground="Black">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Quotes in Progress"/>
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
+            <HyperlinkButton x:ConnectionId='3' Name="btnViewQuotesCheck"
+                                                             
+                             Content="Quotes to be Checked"
+                             Style="{StaticResource txtHLMenuText}"
+                             Grid.Column="1"
+                             Grid.Row="1"
+                             Foreground="Black">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Quotes to Check"/>
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
+            <HyperlinkButton x:ConnectionId='4' Name="btnViewQuotesSent"
+                                                            
+                             Content="Quotes Sent"
+                             Style="{StaticResource txtHLMenuText}"
+                             Grid.Column="1"
+                             Grid.Row="1"
+                             Foreground="Black">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Quotes Sent"/>
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
+            <HyperlinkButton x:ConnectionId='5' Name="btnViewQuotesChased"
+                                                              
+                             Content="Quotes Chased"
+                             Style="{StaticResource txtHLMenuText}"
+                             Grid.Column="1"
+                             Grid.Row="1"
+                             Foreground="Black">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Quotes Chased"/>
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
+            <HyperlinkButton x:ConnectionId='6' Name="btnViewQuotesCalledIn"
+                                                                
+                             Content="Quotes Called In"
+                             Style="{StaticResource txtHLMenuText}"
+                             Grid.Column="1"
+                             Grid.Row="1"
+                             Foreground="Black">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Quotes Called In"/>
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
+        </StackPanel>
+        <StackPanel Grid.Row="3"
+                    Grid.Column="3"
+                    VerticalAlignment="Top">
+            <HyperlinkButton Content="Analysis Reports"
+                             Style="{StaticResource txtHLMenuText}" 
+                             Foreground="Black"/>
         </StackPanel>
 
     </Grid>

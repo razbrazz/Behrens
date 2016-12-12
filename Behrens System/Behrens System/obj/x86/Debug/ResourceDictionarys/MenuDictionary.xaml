@@ -1,22 +1,32 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Behrens_System.ResourceDictionarys">
+    xmlns:local="using:Behrens_System">
 
-    <Style x:Key="txtMenuHeader" TargetType="TextBlock">
+    <Style x:Key="txtHLMenuHeader" TargetType="HyperlinkButton">
         <Setter Property="FontFamily" Value="Segoe UI"/>
-        <Setter Property="FontSize" Value="70"/>
+        <Setter Property="FontSize" Value="48"/>
         <Setter Property="FontWeight" Value="Light"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="Black"/>
     </Style>
     <Style x:Key="txtMenuText" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Segoe UI"/>
-        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="FontSize" Value="24"/>
         <Setter Property="FontWeight" Value="Light"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+    <Style x:Key="txtHLMenuText" TargetType="HyperlinkButton">
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="Black"/>
     </Style>
     <Style x:Key="btnMenuButtonMain" TargetType="Button">
         <Setter Property="FontSize" Value="16"/>

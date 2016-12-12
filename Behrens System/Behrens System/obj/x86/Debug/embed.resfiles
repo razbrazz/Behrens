@@ -2,9 +2,18 @@ App.xbf
 MainMenuPages\MainMenuPage.xbf
 MainMenuPages\MainMenuSideBar.xbf
 MainPage.xbf
+ResourceDictionarys\HeaderDictionary.xbf
 ResourceDictionarys\MenuDictionary.xbf
 ResourceDictionarys\SideBarDictionary.xbf
 View\Projects\Projects.xbf
 View\PurchaseOrders\PurchaseOrderMenu.xbf
+View\Quotes\Quote Items\AddProduct.xbf
+View\Quotes\Quote Items\BHQCdetm.xbf
+View\Quotes\Quote Items\BHQRBdetm.xbf
+View\Quotes\Quote Items\BHQVBdetm.xbf
+View\Quotes\Quote Items\CustomerInformation.xbf
+View\Quotes\Quote Items\QuoteHeader.xbf
+View\Quotes\Quote Items\QuoteHeaderFrame.xbf
+View\Quotes\QuoteInformation.xbf
 View\Quotes\QuotesMenu.xbf
-View\SalesOrders\SalesOrderMenu.xbf
+View\SalesOrders\Sales Order Items\SalesOrderHeader.xbf
